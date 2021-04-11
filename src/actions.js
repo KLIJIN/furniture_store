@@ -24,6 +24,26 @@ export const COUNT_CART_TOTALS = 'COUNT_CART_TOTALS'
 
 
 
+export const sidebarOpenAction = () => {
+  return (
+    { type: SIDEBAR_OPEN }
+  )
+}
 
 
+export const sidebarCloseAction = () => {
+  return {
+    type: SIDEBAR_CLOSE
+  }
+}
 
+export const GetProductsBeginAction = () => {
+  return { type: GET_PRODUCTS_BEGIN }
+}
+
+export const GetProductsSuccessAction = (products) => {
+  return {
+    type: GET_PRODUCTS_SUCCESS,
+    payload: products
+  }
+}

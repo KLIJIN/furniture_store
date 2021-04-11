@@ -10,21 +10,7 @@ import {
 } from '../actions'
 
 const products_reducer = (state, action) => {
-
-  // if (action.type === SIDEBAR_OPEN) {
-  //   return { ...state, isSidebarOpen: true }
-  // }
-  // if (action.type === SIDEBAR_CLOSE) {
-  //   return { ...state, isSidebarOpen: false }
-  // }
-  // if (action.type === GET_PRODUCTS_BEGIN) {
-  //   return { ...state, products_loading: true, }
-  // }
-  // if (action.type === GET_PRODUCTS_SUCCESS) {
-  //   return { ...state, products_loading: true, }
-  // }
-  // return state
-
+  // debugger;
   switch (action.type) {
     case SIDEBAR_OPEN:
       return { ...state, isSidebarOpen: true };

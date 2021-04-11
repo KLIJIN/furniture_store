@@ -1,14 +1,13 @@
-import React from 'react'
-import styled from 'styled-components'
-import { Link } from 'react-router-dom'
+import React from 'react';
+import styled from 'styled-components';
+import { Link } from 'react-router-dom';
+
 const ErrorPage = () => {
-  return <Wrapper className="page-100"  >
+  return <Wrapper className="page-100" >
     <section>
       <h1>404</h1>
       <h3>Извините, такой страницы не существует</h3>
-      <Link to="/" className="btn"    >
-        На главную
-      </Link>
+      <Link to="/" className="btn" > На главную </Link>
     </section>
 
   </Wrapper>

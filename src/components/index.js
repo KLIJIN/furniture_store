@@ -1,6 +1,6 @@
 import FeaturedProducts from './FeaturedProducts'
 import Navbar from './Navbar'
-import CartButtons from './CartButtons'
+import CartButtons from './NavButtons'
 import Footer from './Footer'
 import Sidebar from './Sidebar'
 import Hero from './Hero'

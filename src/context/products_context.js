@@ -1,16 +1,10 @@
 import axios from 'axios'
 import React, { useContext, useEffect, useReducer } from 'react'
-import reducer from '../reducers/products_reducer'
+import ProductsReducer from '../reducers/products_reducer'
 import { products_url as url } from '../utils/constants'
 import {
-  SIDEBAR_OPEN,
-  SIDEBAR_CLOSE,
-  GET_PRODUCTS_BEGIN,
-  GET_PRODUCTS_SUCCESS,
-  GET_PRODUCTS_ERROR,
-  GET_SINGLE_PRODUCT_BEGIN,
-  GET_SINGLE_PRODUCT_SUCCESS,
-  GET_SINGLE_PRODUCT_ERROR,
+  sidebarOpenAction, SIDEBAR_OPEN, sidebarCloseAction, GET_PRODUCTS_BEGIN, GET_PRODUCTS_SUCCESS, GET_PRODUCTS_ERROR, GET_SINGLE_PRODUCT_BEGIN,
+  GET_SINGLE_PRODUCT_SUCCESS, GET_SINGLE_PRODUCT_ERROR,
 } from '../actions'
 
 const initialState = {
@@ -24,19 +18,20 @@ const initialState = {
   single_product: {}
 }
 
-const ProductsContext = React.createContext()
+const ProductsContext = React.createContext();
 
 export const ProductsProvider = ({ children }) => {
 
-  const [state, dispatch] = useReducer(reducer, initialState)
+  const [state, dispatch] = useReducer(ProductsReducer, initialState)
 
   const openSidebar = () => {
-    dispatch({ type: SIDEBAR_OPEN })
+    dispatch(sidebarOpenAction())
   }
 
   const closeSidebar = () => {
-    dispatch({ type: SIDEBAR_CLOSE })
+    dispatch(sidebarCloseAction())
   }
+
 
   const fetchProducts = async (url) => {
     dispatch({ type: GET_PRODUCTS_BEGIN }) //типа начали загрузку, открыли лоадинг, 
@@ -74,7 +69,7 @@ export const ProductsProvider = ({ children }) => {
     </ProductsContext.Provider>
   )
 }
-// make sure use
+// Custom Hook ---------------------------------------------------------------------->
 export const useProductsContext = () => {
   return useContext(ProductsContext,)
 }

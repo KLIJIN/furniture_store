@@ -2,8 +2,10 @@ import React from 'react'
 import styled from 'styled-components'
 const Footer = () => {
   return <Wrapper>
-    <h5> &copy; {new Date().getFullYear()}
-      <span> Ikea Russia </span>
+    <h5>
+      &copy;
+      {new Date().getFullYear()}
+      <span> Furniture Store </span>
     </h5>
     <h5>Все права защищены</h5>
   </Wrapper>

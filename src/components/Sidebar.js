@@ -5,15 +5,16 @@ import { useProductsContext } from '../context/products_context'
 import { FaTimes } from 'react-icons/fa'
 import { links } from '../utils/constants'
 import styled from 'styled-components'
-import CartButtons from './CartButtons'
+import CartButtons from './NavButtons'
 import { useUserContext } from '../context/user_context'
 
 const Sidebar = () => {
-  const { isSidebarOpen, closeSidebar } = useProductsContext()
+  const { isSidebarOpen, closeSidebar } = useProductsContext();
+
 
   return <SidebarContainer>
-    <aside className={`${isSidebarOpen ? "sidebar show-sidebar" : "sidebar"}`} >
-      <div className="sidebar-header">
+    <aside className={`${isSidebarOpen ? "sidebar sidebar__show" : "sidebar"}`} >
+      <div className="sidebar__header">
         <img className="logo" src={logo} alt="logo" />
         <button className="close-btn" type="button"> <FaTimes onClick={closeSidebar} /></button>
       </div>
@@ -24,20 +25,16 @@ const Sidebar = () => {
             <Link to={url} onClick={closeSidebar}  >{text}</Link>
           </li>
         })}
-        <li>
-          <Link to="/checkout" onClick={closeSidebar} > checkout</Link>
-        </li>
+        <li> <Link to="/checkout" onClick={closeSidebar} > checkout</Link> </li>
       </ul>
       <CartButtons />
     </aside>
-
-
   </SidebarContainer>
 }
 
 const SidebarContainer = styled.div`
   text-align: center;
-  .sidebar-header {
+  .sidebar__header {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -92,7 +89,7 @@ const SidebarContainer = styled.div`
     transform: translate(-100%);
     z-index: -1;
   }
-  .show-sidebar {
+  .sidebar__show {
     transform: translate(0);
     z-index: 999;
   }
