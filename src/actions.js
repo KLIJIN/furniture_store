@@ -13,6 +13,8 @@ export const LOAD_PRODUCTS = 'LOAD_PRODUCTS'
 
 export const SET_GRIDVIEW = 'SET_GRIDVIEW'
 export const SET_LISTVIEW = 'SET_LISTVIEW'
+
+
 export const UPDATE_SORT = 'UPDATE_SORT'
 export const SORT_PRODUCTS = 'SORT_PRODUCTS'
 export const UPDATE_FILTERS = 'UPDATE_FILTERS'
@@ -85,4 +87,13 @@ export const loadProductsAction = (products) => {
     type: LOAD_PRODUCTS,
     payload: products
   }
+}
+
+
+export const setGridViewAction = () => {
+  return { type: SET_GRIDVIEW }
+}
+
+export const setListViewAction = () => {
+  return { type: SET_LISTVIEW }
 }

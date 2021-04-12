@@ -4,12 +4,12 @@ import { BsFillGridFill, BsList } from 'react-icons/bs'
 import styled from 'styled-components'
 const Sort = () => {
 
-  const { filtered_products: products, grid_view, setGrid, setList, sort, updateSort } = useFilterContext();
+  const { filtered_products: products, grid_view, setGridView, setListView, sort, updateSort } = useFilterContext();
 
   return <Wrapper>
     <div className="btn-container">
-      <button type="button" > <BsFillGridFill className={`${grid_view ? "active" : ""}`} onClick={setGrid} /> </button>
-      <button type="button" > <BsList className={`${!grid_view ? "active" : ""}`} onClick={setList} /> </button>
+      <button type="button" > <BsFillGridFill className={`${grid_view ? "active" : ""}`} onClick={setGridView} /> </button>
+      <button type="button" > <BsList className={`${!grid_view ? "active" : ""}`} onClick={setListView} /> </button>
     </div>
     <p> {products.length} товаров найдено </p>
     <form>
