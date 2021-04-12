@@ -2,6 +2,7 @@ import React, { useEffect, useContext, useReducer } from 'react'
 import reducer from '../reducers/filter_reducer'
 import {
   LOAD_PRODUCTS,
+  loadProductsAction,
   SET_GRIDVIEW,
   SET_LISTVIEW,
   UPDATE_SORT,
@@ -37,7 +38,7 @@ export const FilterProvider = ({ children }) => {
   const [state, dispatch] = useReducer(reducer, initialState)
 
   useEffect(() => {
-    dispatch({ type: LOAD_PRODUCTS, payload: products })
+    dispatch(loadProductsAction(products));
   }, [products])
 
   useEffect(() => {
