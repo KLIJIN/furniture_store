@@ -9,10 +9,9 @@ const Hero = () => {
     <article className="content">
       <h1>design your <br /> comfort zone </h1>
       <p>
-        Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-        Ea nulla maiores quis deleniti ipsa.
+        Представляем Вашему вниманию качественную мебель по доступным ценам.
       </p>
-      <Link to='/products' className="btn hero-btn"> Купить сейчас </Link>
+      <Link to='/products' className="btn hero-btn"> Перейти в каталог </Link>
     </article>
 
     <article className="img-container"  >
@@ -23,9 +22,12 @@ const Hero = () => {
 }
 
 const Wrapper = styled.section`
+padding-left: 5rem;
+padding-right: 5rem;
   min-height: 60vh;
   display: grid;
   place-items: center;
+  cursor: default;
   .img-container {
     display: none;
   }
@@ -36,6 +38,7 @@ const Wrapper = styled.section`
     margin-bottom: 2rem;
     color: var(--clr-grey-5);
     font-size: 1rem;
+    
   }
   @media (min-width: 992px) {
     height: calc(100vh - 5rem);

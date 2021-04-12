@@ -1,24 +1,19 @@
 import React, { useEffect } from 'react'
 import { useParams, useHistory } from 'react-router-dom'
 import { Link } from 'react-router-dom'
+import styled from 'styled-components'
+
 import { useProductsContext } from '../context/products_context'
 import { single_product_url as url } from '../utils/constants'
 import { formatPrice } from '../utils/helpers'
-import {
-  Loading,
-  Error,
-  ProductImages,
-  AddToCart,
-  Stars,
-  PageHero,
-} from '../components'
-import styled from 'styled-components'
+import { Loading, Error, ProductImages, AddToCart, Stars, PageHero, } from '../components'
+
 
 
 
 const SingleProductPage = () => {
-  const { id } = useParams();
 
+  const { id } = useParams();
   const history = useHistory()
 
   const {
@@ -26,13 +21,11 @@ const SingleProductPage = () => {
     single_product_error: error,
     single_product: product,
     fetchSingleProduct,
-    products: products,
-  } = useProductsContext()
+  } = useProductsContext() //достаем из контекста часть initialState
 
 
   useEffect(() => {
     fetchSingleProduct(`${url}${id}`)
-    // eslint-disable-next-line
   }, [id])
 
   useEffect(() => {
@@ -46,18 +39,14 @@ const SingleProductPage = () => {
   }, [error])
 
   const { name, price, description, stock, stars, reviews, id: sku, company, images, } = product
-
-  // console.log("SingleProductPage_products", products);
-  // console.log("SingleProductPage_product", product);
   return <Wrapper>
     {loading && <Loading />}
     {error && <Error />}
-    <h4>single product page</h4>
     < PageHero title={name} product={product} />
     <div className="section section-center page">
-      <Link to="/products" className="btn" > back to products  </Link>
+      <Link to="/products" className="btn" > Обратно в Каталог  </Link>
       <div className="product-center">
-        <ProductImages images={images} sku={sku} id={id} />
+        {images?.length > 1 && <ProductImages images={images} sku={sku} id={id} />}
         <section className="content">
           <h2>{name}</h2>
           <Stars stars={stars} reviews={reviews} />

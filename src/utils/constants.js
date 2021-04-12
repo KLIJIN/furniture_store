@@ -1,5 +1,7 @@
 import React from 'react'
 import { GiCompass, GiDiamondHard, GiStabbedNote } from 'react-icons/gi'
+
+//ссылки для навбара
 export const links = [
   {
     id: 1,
@@ -17,6 +19,7 @@ export const links = [
     url: '/products',
   },
 ]
+
 
 export const services = [
   {

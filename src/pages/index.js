@@ -1,4 +1,4 @@
-import Home from "./HomePage";
+import HomePage from "./HomePage";
 import AboutPage from "./AboutPage";
 import AuthWrapper from "./AuthWrapper";
 import CartPage from "./CartPage";
@@ -14,7 +14,7 @@ export {
     CartPage,
     CheckoutPage,
     ErrorPage,
-    Home,
+    HomePage,
     PrivateRoute,
     ProductsPage,
     SingleProductPage

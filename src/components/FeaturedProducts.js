@@ -9,9 +9,7 @@ import Product from './Product'
 const FeaturedProducts = () => {
   const { products_loading: loading, products_error: error, featured_products: featured } = useProductsContext();
 
-  // if (loading) {
-  //   return <Loading />
-  // }
+
 
   return <div>
     {loading && <Loading />}
@@ -22,9 +20,7 @@ const FeaturedProducts = () => {
         <div className="underline"></div>
       </div>
       <div className="section-center featured">
-        {featured.slice(0, 3).map(product => {
-          return <Product key={product.id} {...product} ></Product>
-        })}
+        {featured.slice(0, 3).map(product => <Product key={product.id} {...product} />)}
       </div>
     </ Wrapper>
   </div>

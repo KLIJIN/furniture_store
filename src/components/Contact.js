@@ -7,18 +7,20 @@ const Contact = () => {
       <h3>Подпишитесь на нашу рассылку и экономьте до 20%  </h3>
       <div className="content">
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis enim harum fuga est minima tempore fugiat alias dolorem error nam.</p>
-        <form className="contact-form">
-          <input type="email" className="form-input" placeholder="укажите ваш email" />
-          <button type="submit" className="submit-btn"  > Подписаться </button>
-
+        <form className="contact-form"
+          action="https://jsonplaceholder.typicode.com/posts"
+          method="POST"
+          onSubmit={(e) => e.preventDefault()}
+        >
+          <input name="email" type="email" className="form-input" placeholder="укажите ваш email" />
+          <button type="submit" className="submit-btn"  > Подписаться </button>{/* добавить превентдефаулт */}
         </form>
-
       </div>
     </div>
-
   </Wrapper>
 }
 const Wrapper = styled.section`
+  cursor: default;
   padding: 5rem 0;
   h3 {
     text-transform: none;

@@ -6,7 +6,7 @@ const Services = () => {
   return <Wrapper>
     <div className="section-center">
       <article className="header">
-        <h3>custom furniture <br />
+        <h3>Custom Furniture <br />
         built only for you
         </h3>
         <p> Lorem, ipsum dolor sit amet consectetur adipisicing elit.
@@ -15,20 +15,23 @@ const Services = () => {
         </p>
       </article>
       <div className="services-center">
-        {services.map((service) => {
-          const { id, icon, title, text } = service;
-          return <article key={id} className="service">
-            <span className="icon"> {icon} </span>
-            <h4>{title}</h4>
-            <p>{text}</p>
-          </article>
-        })}
+        {
+          services.map((service) => {
+            const { id, icon, title, text } = service;
+            return <article key={id} className="service">
+              <span className="icon"> {icon} </span>
+              <h4>{title}</h4>
+              <p>{text}</p>
+            </article>
+          })
+        }
       </div>
     </div>
   </Wrapper>
 }
 
 const Wrapper = styled.section`
+cursor: default;
   h3,
   h4 {
     color: var(--clr-primary-1);

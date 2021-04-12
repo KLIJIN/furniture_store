@@ -2,7 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 import { BsStarFill, BsStarHalf, BsStar } from 'react-icons/bs'
 const Stars = ({ stars, reviews }) => {
-  console.log("Stars", stars, reviews)
+  // console.log("Stars", stars, reviews)
 
   return <Wrapper>
     <div className="stars">
@@ -13,7 +13,6 @@ const Stars = ({ stars, reviews }) => {
         {stars >= 3 ? <BsStarFill /> : stars >= 2.5 ? <BsStarHalf /> : <BsStar />}
         {stars >= 4 ? <BsStarFill /> : stars >= 3.5 ? <BsStarHalf /> : <BsStar />}
         {stars >= 5 ? <BsStarFill /> : stars >= 4.5 ? <BsStarHalf /> : <BsStar />}
-
       </span>
 
     </div>

@@ -1,38 +1,34 @@
 import React, { useState, useEffect } from 'react'
 import styled from 'styled-components'
-import { useProductsContext } from '../context/products_context'
-import { single_product_url as url } from '../utils/constants'
-
 
 const ProductImages = ({ images = [{ url: '' }] }) => {
-  //const [main, setMain] = useState(images?.length > 0 ? images[0] : [])
+  console.log("ProductImages", images);
+
   const [main, setMain] = useState(images[0])
-  // console.log("ProductImages_images", images)
-  // console.log("ProductImages_main", main)
-  // console.log("ProductImages_main_id", main.id)
+
+  useEffect(() => {
+    setMain(images[0])
+  }, [images])
+
   return (
     <Wrapper>
-      <img src={images[0].url} alt='main' className='main' />
+      <img src={main?.url === images[0].url ? main?.url : null} alt='main' className='main' />
       <div className='gallery'>
-        {images.map((image, index) => {
-          return (
-            <img
+        {images.length > 1 && console.log("Загрузилось")}
+        {
+          images.map((image, index) => {
+            return <img
               src={image.url}
               alt={image.filename}
               key={index}
               onClick={() => setMain(images[index])}
-              className={`${image.url === main.url ? 'active' : null}`}
+              className={`${image?.url === main?.url ? 'active' : null}`}
             />
-          )
-        })}
-
+          })
+        }
       </div>
-
-
-
     </Wrapper>
   )
-
 }
 
 const Wrapper = styled.section`
@@ -80,4 +76,4 @@ const Wrapper = styled.section`
   }
 `
 
-export default ProductImages
+export default React.memo(ProductImages);

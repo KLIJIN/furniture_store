@@ -9,10 +9,10 @@ const AboutPage = () => {
     <main>
       <PageHero title="about" />
       <Wrapper className="page section section-center">
-        <img src={aboutImg} alt="logo" />
+        <img src={aboutImg} alt="about image" />
         <article>
           <div className="title">
-            <h2>our story</h2>
+            <h2>About Us</h2>
             <div className="underline"></div>
           </div>
           <p> Наш интернет-магазин предлагает широкий выбор различных товаров для строительства, ремонта и
@@ -47,9 +47,10 @@ const Wrapper = styled.section`
   }
   .underline {
     margin-left: 0;
+    width: 11.5rem;
   }
   @media (min-width: 992px) {
     grid-template-columns: 1fr 1fr;
   }
-`
+  `
 export default AboutPage

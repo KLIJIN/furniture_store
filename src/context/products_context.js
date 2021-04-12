@@ -3,9 +3,10 @@ import React, { useContext, useEffect, useReducer } from 'react'
 import ProductsReducer from '../reducers/products_reducer'
 import { products_url as url } from '../utils/constants'
 import {
-  sidebarOpenAction, SIDEBAR_OPEN, sidebarCloseAction, GET_PRODUCTS_BEGIN, GET_PRODUCTS_SUCCESS, GET_PRODUCTS_ERROR, GET_SINGLE_PRODUCT_BEGIN,
-  GET_SINGLE_PRODUCT_SUCCESS, GET_SINGLE_PRODUCT_ERROR,
+  sidebarOpenAction, sidebarCloseAction, GetProductsBeginAction, GetProductsSuccessAction,
+  GetProductsErrorAction, GetSingleProductsBeginAct, GetSingleProductsSuccessAct, GetSingleProductsErrorAct
 } from '../actions'
+
 
 const initialState = {
   isSidebarOpen: false,
@@ -25,38 +26,37 @@ export const ProductsProvider = ({ children }) => {
   const [state, dispatch] = useReducer(ProductsReducer, initialState)
 
   const openSidebar = () => {
-    dispatch(sidebarOpenAction())
+    dispatch(sidebarOpenAction());
   }
 
   const closeSidebar = () => {
-    dispatch(sidebarCloseAction())
+    dispatch(sidebarCloseAction());
   }
 
 
   const fetchProducts = async (url) => {
-    dispatch({ type: GET_PRODUCTS_BEGIN }) //типа начали загрузку, открыли лоадинг, 
+    dispatch(GetProductsBeginAction()) //пошла загрузка - открыли лоадинг,
     try {
       const response = await axios.get(url)
       const products = response.data
-      dispatch({ type: GET_PRODUCTS_SUCCESS, payload: products })
-      console.log("response", response);
+      dispatch(GetProductsSuccessAction(products));
+      // console.log("response", response);
     } catch (error) {
       console.log(error);
-      dispatch({ type: GET_PRODUCTS_ERROR })
+      dispatch(GetProductsErrorAction());
     }
-
   }
 
+  //загружает отдельный product
   const fetchSingleProduct = async (url) => {
-    dispatch({ type: GET_SINGLE_PRODUCT_BEGIN })
+    dispatch(GetSingleProductsBeginAct())
     try {
       const response = await axios.get(url)
       const singleProduct = response.data
-      dispatch({ type: GET_SINGLE_PRODUCT_SUCCESS, payload: singleProduct })
+      dispatch(GetSingleProductsSuccessAct(singleProduct))
     } catch (error) {
-      dispatch({ type: GET_SINGLE_PRODUCT_ERROR })
+      dispatch(GetSingleProductsErrorAct())
     }
-
   }
 
   useEffect(() => {
