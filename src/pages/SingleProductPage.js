@@ -9,8 +9,6 @@ import { formatPrice } from '../utils/helpers'
 import { Loading, Error, ProductImages, AddToCart, Stars, PageHero, } from '../components'
 
 
-
-
 const SingleProductPage = () => {
 
   const { id } = useParams();

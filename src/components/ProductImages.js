@@ -10,9 +10,13 @@ const ProductImages = ({ images = [{ url: '' }] }) => {
     setMain(images[0])
   }, [images])
 
+  const clickHandler = (index) => {
+    // console.log("clickHandler", images[index])
+    setMain(images[index])
+  }
   return (
     <Wrapper>
-      <img src={main?.url === images[0].url ? main?.url : null} alt='main' className='main' />
+      <img src={main?.url} alt='main' className='main' />
       <div className='gallery'>
         {images.length > 1 && console.log("Загрузилось")}
         {
@@ -21,7 +25,7 @@ const ProductImages = ({ images = [{ url: '' }] }) => {
               src={image.url}
               alt={image.filename}
               key={index}
-              onClick={() => setMain(images[index])}
+              onClick={() => clickHandler(index)}
               className={`${image?.url === main?.url ? 'active' : null}`}
             />
           })
