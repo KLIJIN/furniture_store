@@ -77,9 +77,7 @@ const filter_reducer = (state, action) => {
       // filtering
       // text
       if (text) {
-        tempProducts = tempProducts.filter((product) => {
-          return product.name.toLowerCase().startsWith(text)
-        })
+        tempProducts = tempProducts.filter((product) => product.name.toLowerCase().indexOf(text.toLowerCase()) >= 0)
       }
       // category
       if (category !== 'all') {
