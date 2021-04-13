@@ -6,40 +6,47 @@ import { FaCheck } from 'react-icons/fa'
 
 
 const Filters = () => {
-  const { filters: { text, company, category, color, min_price, max_price, price, shipping }, updateFilters, clearFilters, all_products, } = useFilterContext()
 
-  const categories = getUniqueValues(all_products, "category") //вызываем функцию с двумя параметрами
+  const { filters: { text, company, category, color, min_price, max_price,
+    actual_price, shipping }, updateFilters, clearFilters, all_products, } = useFilterContext()
+
+  const categories = getUniqueValues(all_products, "category") //сохраняем уникальные имена категорий
   const companies = getUniqueValues(all_products, "company")
   const colors = getUniqueValues(all_products, "colors")
-  //console.log("Filters__categories", categories)          className={`${category === category.toUpperCase() ? 'active' : ''}`}  state.filters?.category
+  //console.log("Filters__categories", colors)
+  //  className={`${category === category.toUpperCase() ? 'active' : ''}`}  state.filters?.category
 
   return <Wrapper>
     <div className="content">
       <form onSubmit={(e) => e.preventDefault()}  >
-        <input type="text" name="text"
-          placeholder="поиск" className="search-input" value={text} onChange={updateFilters} />
-        {/* тут name в инпуте должно совпадать с именем свойства в ФильтрКонтекст filters или нужно будет хардкодить  */}
+        <input type="text" name="text" className="search-input" placeholder="поиск" value={text} onChange={updateFilters} />
+        {/* тут name в инпуте должно совпадать с именем свойства в filter_context */}
+
         <div className="form-control">
           <h5>категории:</h5>
           <div>
-            {categories.map((catGory, index) => {
-              return < button key={index} onClick={updateFilters} name="category" type="button" className={`${catGory.toLowerCase() === category ? 'active' : ''}`}   >
-                {/* {`${category.slice(0, 1).toLocaleUpperCase()}${category.slice(1, category.length).toLowerCase()}`} */}
-                {catGory}
-              </button>
-            })}
+            {
+              categories.map((categoryItem, index) => {
+                return (
+                  < button key={index} onClick={updateFilters} name="category" type="button" className={`${categoryItem.toLowerCase() === category ? "active" : ""}`} >
+                    {categoryItem}
+                  </button>
+                )
+              })
+            }
           </div>
         </div>
+        {/* -----------------------------------company----------------------------- */}
         <div className="form-control">
           <h5> Фирма </h5>
-          <select name="company" value={company} onChange={updateFilters} className="company"    >
+          <select name="company" value={company} onChange={updateFilters} className="company" >
             {/* тут name из селекта и value из optiona динамически передаем в контекст, который диспатчит эти данные в редьюсер и подставляет их в стейт */}
-            {companies.map((catGory, index) => {
-              return < option key={catGory} value={catGory} > {catGory} </option>
+            {companies.map((categoryItem) => {
+              return < option key={categoryItem} value={categoryItem} > {categoryItem} </option>
             })}
           </select>
         </div>
-
+        {/* -----------------------------------colors----------------------------- */}
         <div className="form-control">
           <h5> цвета </h5>
           <div className="colors">
@@ -59,24 +66,19 @@ const Filters = () => {
             })}
           </div>
         </div>
-
+        {/* -----------------------------------price----------------------------- */}
         <div className="form-control">
-          <h5>price</h5>
-          <div className="price">{formatPrice(price)}  </div>
-          <input type="range" name="price" min={min_price} max={max_price} onChange={updateFilters} value={price} />
+          <h5>цена</h5>
+          <div className="price">{formatPrice(actual_price)}  </div>
+          <input type="range" name="actual_price" min={min_price} max={max_price} onChange={updateFilters} value={actual_price} />
         </div>
-
+        {/* -----------------------------------shipping----------------------------- */}
         <div className='form-control shipping'>
-          <label htmlFor='shipping'> free shipping</label>
-          <input
-            type='checkbox'
-            name='shipping'
-            id='shipping'
-            onChange={updateFilters}
-            checked={shipping}
-          />
+          <label htmlFor='shipping'> бесп. доставка  </label>
+          <input type='checkbox' name='shipping' id='shipping' onChange={updateFilters} checked={shipping} />
         </div>
       </form>
+      {/* -----------------------------------clear Filters----------------------------- */}
       <button type="button" className="clear-btn" onClick={clearFilters}>   Очистить фильтр    </button>
     </div>
   </Wrapper>

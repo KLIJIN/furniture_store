@@ -17,6 +17,7 @@ export const SET_LISTVIEW = 'SET_LISTVIEW'
 
 export const UPDATE_SORT = 'UPDATE_SORT'
 export const SORT_PRODUCTS = 'SORT_PRODUCTS'
+
 export const UPDATE_FILTERS = 'UPDATE_FILTERS'
 export const FILTER_PRODUCTS = 'FILTER_PRODUCTS'
 export const CLEAR_FILTERS = 'CLEAR_FILTERS'
@@ -108,4 +109,17 @@ export const updateSortAction = (value) => {
 
 export const sortProductsAction = () => {
   return { type: SORT_PRODUCTS }
+}
+
+
+
+export const updateFiltersAction = ({ name, value }) => {
+  return {
+    type: UPDATE_FILTERS,
+    payload: { name, value }
+  }
+}
+
+export const filterProductsAction = () => {
+  return { type: FILTER_PRODUCTS }
 }
