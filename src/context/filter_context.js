@@ -5,7 +5,7 @@ import {
   setGridViewAction,
   setListViewAction,
   updateSortAction,
-  SORT_PRODUCTS,
+  sortProductsAction,
   UPDATE_FILTERS,
   FILTER_PRODUCTS,
   CLEAR_FILTERS,
@@ -42,7 +42,7 @@ export const FilterProvider = ({ children }) => {
 
   useEffect(() => {
     dispatch({ type: FILTER_PRODUCTS })
-    dispatch({ type: SORT_PRODUCTS })
+    dispatch(sortProductsAction())   //SORT_PRODUCTS
   }, [products, state.sort, state.filters])
 
   //SET_GRIDVIEW        

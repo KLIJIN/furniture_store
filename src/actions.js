@@ -106,3 +106,6 @@ export const updateSortAction = (value) => {
   }
 }
 
+export const sortProductsAction = () => {
+  return { type: SORT_PRODUCTS }
+}
