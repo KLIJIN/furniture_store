@@ -18,7 +18,6 @@ const filter_reducer = (state, action) => {
     case LOAD_PRODUCTS:
       maxPrice = action.payload.map((product) => product.price); //получаем массив с ценами всех продуктов
       maxPrice = Math.max(...maxPrice);  //возвращаем максимальную цену из входящего массива чисел
-      console.log("LOAD_PRODUCTS_maxPrice", maxPrice);
       return {
         ...state,
         all_products: [...action.payload],  //редьюсер возвращает стейт,  а в all_products кладет products из продуктового контекста
@@ -70,11 +69,10 @@ const filter_reducer = (state, action) => {
     case UPDATE_FILTERS:
       const { name, value } = action.payload
       return { ...state, filters: { ...state.filters, [name]: value } }
-    //--------------------------------------------------------------------
+    //==================FILTER_PRODUCTS==================================================
     case FILTER_PRODUCTS:
       const { all_products } = state;
       tempProducts = [...all_products];
-      console.log("filter_reducer", tempProducts);
       const { text, category, company, color, actual_price, shipping } = state.filters
       // filtering
       // text
@@ -105,11 +103,8 @@ const filter_reducer = (state, action) => {
       if (shipping) {
         tempProducts = tempProducts.filter((product) => product.shipping === true)
       }
-      console.log("filter_reducer FILTER_PRODUCTS")
-      console.log("filter_reducer", tempProducts);
-
       return { ...state, filtered_products: tempProducts }
-    //--------------------------------------------------------------------
+    //============//=====FILTER_PRODUCTS=====//==============================================
     case CLEAR_FILTERS:
       console.log("filter_reducer CLEAR_FILTERS")
       return {
