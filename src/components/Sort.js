@@ -15,10 +15,10 @@ const Sort = () => {
     <form>
       <label htmlFor="sort" > сортировать: </label>
       <select name="sort" id="sort" className="sort-input" value={sort} onChange={updateSort} >
-        <option value="price-lowest">  price (lowest)  </option>
-        <option value="price-highest"> price (highest) </option>
-        <option value="name-a"> name (asc)  </option>
-        <option value="name-z"> name (desc) </option>
+        <option value="price-lowest"> цена (lowest) </option>
+        <option value="price-highest"> цена (highest) </option>
+        <option value="name-a-z"> название (а-я)  </option>
+        <option value="name-z-a"> название (я-а) </option>
       </select>
     </form>
   </Wrapper>

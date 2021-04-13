@@ -4,7 +4,7 @@ import {
   loadProductsAction,
   setGridViewAction,
   setListViewAction,
-  UPDATE_SORT,
+  updateSortAction,
   SORT_PRODUCTS,
   UPDATE_FILTERS,
   FILTER_PRODUCTS,
@@ -33,8 +33,8 @@ const FilterContext = React.createContext()
 
 export const FilterProvider = ({ children }) => {
 
-  const { products } = useProductsContext()
-  const [state, dispatch] = useReducer(reducer, initialState)
+  const { products } = useProductsContext();
+  const [state, dispatch] = useReducer(reducer, initialState);
 
   useEffect(() => {
     dispatch(loadProductsAction(products));
@@ -45,17 +45,23 @@ export const FilterProvider = ({ children }) => {
     dispatch({ type: SORT_PRODUCTS })
   }, [products, state.sort, state.filters])
 
+  //SET_GRIDVIEW        
   const setGridView = () => {
     dispatch(setGridViewAction())
   }
+  //SET_LISTVIEW
   const setListView = () => {
     dispatch(setListViewAction())
   }
+
+  //UPDATE_SORT
   const updateSort = (e) => {
     // for demonstration
-    // const name = e.target.name
-    const value = e.target.value
-    dispatch({ type: UPDATE_SORT, payload: value })
+    //const name = e.target.name
+    // console.log("UPDATE_SORT_name", e.target.name);
+    // console.log("UPDATE_SORT_value", e.target.value);
+    const value = e.target.value;
+    dispatch(updateSortAction(value))
   }
   const updateFilters = (e) => {
     let name = e.target.name

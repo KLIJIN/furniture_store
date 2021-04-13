@@ -8,7 +8,7 @@ const ListView = ({ products }) => {
     {products.map((product) => {
       const { id, image, name, price, description } = product;
       return <article key={id}  >
-        <Link to={`/products/${id}`}  > <img src={image} alt={name} /> </Link>
+        <Link to={`/products/${id}`} > <img src={image} alt={name} /> </Link>
 
         <div>
           <h4>{name}</h4>
@@ -26,7 +26,7 @@ const Wrapper = styled.section`
   row-gap: 3rem;
 
   img {
-      width: 100%;
+    width: 100%;
     display: block;
     width: 300px;
     height: 200px;

@@ -2,7 +2,7 @@ import {
   LOAD_PRODUCTS,
   SET_LISTVIEW,
   SET_GRIDVIEW,
-  // UPDATE_SORT,
+  UPDATE_SORT,
   // SORT_PRODUCTS,
   // UPDATE_FILTERS,
   // FILTER_PRODUCTS,
@@ -28,7 +28,9 @@ const filter_reducer = (state, action) => {
     case SET_LISTVIEW:
       return { ...state, grid_view: false }
 
-
+    case UPDATE_SORT:
+      //   console.log("UPDATE_SORT")
+      return { ...state, sort: action.payload }
 
     default:
       return state;
@@ -142,7 +144,7 @@ const filter_reducer = (state, action) => {
   // }
 
 
-  throw new Error(`No Matching "${action.type}" - action type`)
+  // throw new Error(`No Matching "${action.type}" - action type`)
 }
 
 export default filter_reducer

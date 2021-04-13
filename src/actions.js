@@ -97,3 +97,12 @@ export const setGridViewAction = () => {
 export const setListViewAction = () => {
   return { type: SET_LISTVIEW }
 }
+
+
+export const updateSortAction = (value) => {
+  return {
+    type: UPDATE_SORT,
+    payload: value
+  }
+}
+
