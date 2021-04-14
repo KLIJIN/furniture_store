@@ -123,3 +123,20 @@ export const updateFiltersAction = ({ name, value }) => {
 export const filterProductsAction = () => {
   return { type: FILTER_PRODUCTS }
 }
+
+
+export const clearFiltersAction = () => {
+  return { type: CLEAR_FILTERS }
+}
+
+
+export const addToCartAction = (id, color, amount, product) => {
+  console.log("addToCartAction ", id, color, amount, product)
+  return {
+    type: ADD_TO_CART,
+    payload: { id, color, amount, product }
+  }
+}
+
+
+

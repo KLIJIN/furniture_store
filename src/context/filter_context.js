@@ -7,9 +7,8 @@ import {
   updateSortAction,
   sortProductsAction,
   updateFiltersAction,
-  FILTER_PRODUCTS,
   filterProductsAction,
-  CLEAR_FILTERS,
+  clearFiltersAction,
 } from '../actions'
 import { useProductsContext } from './products_context'
 
@@ -43,23 +42,22 @@ export const FilterProvider = ({ children }) => {
   }, [products])
 
   useEffect(() => {
-    dispatch(filterProductsAction())  //FILTER_PRODUCTS
-    dispatch(sortProductsAction())   //SORT_PRODUCTS
+    dispatch(filterProductsAction());  //FILTER_PRODUCTS
+    dispatch(sortProductsAction());   //SORT_PRODUCTS
   }, [products, state.sort, state.filters])
 
   //SET_GRID-VIEW        
   const setGridView = () => {
-    dispatch(setGridViewAction())
+    dispatch(setGridViewAction());
   }
   //SET_LIST-VIEW
   const setListView = () => {
-    dispatch(setListViewAction())
+    dispatch(setListViewAction());
   }
 
-  //UPDATE_SORT
   const updateSort = (e) => {
     const value = e.target.value;
-    dispatch(updateSortAction(value))
+    dispatch(updateSortAction(value));  //UPDATE_SORT
   }
   const updateFilters = (e) => {
     let name = e.target.name
@@ -79,12 +77,10 @@ export const FilterProvider = ({ children }) => {
     if (name === 'shipping') {
       value = e.target.checked
     }
-    console.log("updateFilters", name, value);
-    dispatch(updateFiltersAction({ name, value })) //UPDATE_FILTERS
+    dispatch(updateFiltersAction({ name, value })); //UPDATE_FILTERS
   }
   const clearFilters = () => {
-    console.log("clearFilters");
-    dispatch({ type: CLEAR_FILTERS })
+    dispatch(clearFiltersAction()); //CLEAR_FILTERS
   }
   return (
     <FilterContext.Provider value={{ ...state, setGridView, setListView, updateSort, updateFilters, clearFilters, }}>
@@ -94,5 +90,5 @@ export const FilterProvider = ({ children }) => {
 }
 // make sure use
 export const useFilterContext = () => {
-  return useContext(FilterContext)
+  return useContext(FilterContext);
 }

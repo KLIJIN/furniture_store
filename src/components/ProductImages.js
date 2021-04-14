@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import styled from 'styled-components'
 
 const ProductImages = ({ images = [{ url: '' }] }) => {
-  console.log("ProductImages", images);
+  // console.log("ProductImages", images);
 
   const [main, setMain] = useState(images[0])
 
@@ -18,7 +18,7 @@ const ProductImages = ({ images = [{ url: '' }] }) => {
     <Wrapper>
       <img src={main?.url} alt='main' className='main' />
       <div className='gallery'>
-        {images.length > 1 && console.log("Загрузилось")}
+        {/* {images.length > 1 && console.log("Загрузилось")} */}
         {
           images.map((image, index) => {
             return <img

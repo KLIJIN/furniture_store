@@ -6,12 +6,13 @@ import { useCartContext } from '../context/cart_context'
 import AmountButtons from './AmountButtons'
 
 const AddToCart = ({ product }) => {
-  const { addToCart } = useCartContext() //достаем функцию   const addToCart = (id, color, amount, product) => {     dispatch({ type: ADD_TO_CART, payload: { id, color, amount, product } })  }
-  const { id, stock, colors } = product
+  {/* область с цветами, количеством и кнопкой добавить в корзину */ }
+  const { addToCart } = useCartContext(); //достаем функцию const addToCart = (id, color, amount, product) => {     dispatch({ type: ADD_TO_CART, payload: { id, color, amount, product } })  }
+  const { id, stock, colors } = product;
 
   // console.log("AddToCart", colors)
-  const [mainColor, setMainColor] = useState(colors[0])
-  const [amount, setAmount] = useState(1)
+  const [mainColor, setMainColor] = useState(colors[0]);
+  const [amount, setAmount] = useState(1);
 
   const increase = () => {
     setAmount((oldAmount) => {
@@ -45,19 +46,17 @@ const AddToCart = ({ product }) => {
     })
   }
 
-
   return <Wrapper>
     <div className="colors">
       <span> цвета : </span>
-      <div> {colors.map((color, index) => {
-        return <button key={index}
-          className={`${mainColor === color ? 'color-btn active' : 'color-btn'}`}
-          style={{ background: color }}
-          onClick={() => setMainColor(color)}
-        >
-          {mainColor === color && <FaCheck />}
-        </button>
-      })}
+      <div>
+        {
+          colors.map((color, index) => (
+            <button key={index} style={{ background: color }} className={`${mainColor === color ? 'color-btn active' : 'color-btn'}`} onClick={() => setMainColor(color)} >
+              {mainColor === color && <FaCheck />}
+            </button>
+          ))
+        }
       </div>
     </div>
     <div className="btn-container">
@@ -68,6 +67,7 @@ const AddToCart = ({ product }) => {
 }
 
 const Wrapper = styled.section`
+background-color: rgb(50 205 50 / 40%);
   margin-top: 2rem;
   .colors {
     display: grid;

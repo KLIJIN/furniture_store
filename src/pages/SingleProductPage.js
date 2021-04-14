@@ -60,12 +60,10 @@ const SingleProductPage = () => {
           </p>
           <p className="info"> <span>Фирма:</span> {company} </p>
           <hr />
-          {stock > 0 && < AddToCart product={product} />}
+          {stock > 0 && < AddToCart product={product} />} {/* область с цветами, количеством и кнопкой добавить в корзину */}
         </section>
       </div>
-
     </div>
-
   </Wrapper>
 }
 
