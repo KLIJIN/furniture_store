@@ -139,4 +139,29 @@ export const addToCartAction = (id, color, amount, product) => {
 }
 
 
+export const removeCartAction = (id) => {
+  console.log("removeCartAction");
+  return {
+    type: REMOVE_CART_ITEM,
+    payload: id
+
+  }
+}
+
+export const clearCartAction = () => {
+  return { type: CLEAR_CART }
+}
+
+
+export const toggleCartItemAmountAct = (id, value) => {
+  return {
+    type: TOGGLE_CART_ITEM_AMOUNT,
+    payload: { id, value }
+  }
+}
+
+
+export const countCartTotalsActon = () => {
+  return { type: COUNT_CART_TOTALS }
+}
 

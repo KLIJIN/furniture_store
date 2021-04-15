@@ -3,8 +3,8 @@ import styled from 'styled-components'
 import { FaPlus, FaMinus } from 'react-icons/fa'
 
 const AmountButtons = ({ amount, increase, decrease, counting }) => {
-  return <Wrapper className="amount-btns"  >
 
+  return <Wrapper className="amount-btns"  >
     <button type="button" className="amount-btn" onClick={() => counting(-1)} >  <FaMinus />  </button>
     <h2 className="amount"> {amount} </h2>
     <button type="button" className="amount-btn" onClick={counting.bind(this, +1)} >  <FaPlus />  </button>
