@@ -15,13 +15,14 @@ const CartButtons = () => {
       Cart
        <span className="cart-container">
         <FaShoppingCart onClick={closeSidebar} />
-        {total_items > 0
-          ? <span className="cart-value">           {total_items}        </span>
-          : null
+        {
+          total_items > 0
+            ? <span className="cart-value"> {total_items} </span>
+            : null
         }
       </span>
     </Link>
-    <button type="button" className="auth-btn"  > Login <FaUserPlus />  </button>
+    {/* <button type="button" className="auth-btn"  > Login <FaUserPlus />  </button> */}
   </Wrapper>
 }
 
