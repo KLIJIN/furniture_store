@@ -31,7 +31,7 @@ export const CartProvider = ({ children }) => {
   const [state, dispatch] = useReducer(CartReducer, initialState);
 
   const addToCart = (id, color, amount, product) => {
-    console.log("CartProvider", id, color, amount, product);
+    // console.log("CartProvider", id, color, amount, product);
     dispatch(addToCartAction(id, color, amount, product));
   }
 
