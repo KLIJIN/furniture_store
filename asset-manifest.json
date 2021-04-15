@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/furniture_store/static/css/main.4a126a9a.chunk.css",
+    "main.js": "/furniture_store/static/js/main.f6ad2c2c.chunk.js",
+    "main.js.map": "/furniture_store/static/js/main.f6ad2c2c.chunk.js.map",
+    "runtime-main.js": "/furniture_store/static/js/runtime-main.93471463.js",
+    "runtime-main.js.map": "/furniture_store/static/js/runtime-main.93471463.js.map",
+    "static/js/2.432b9307.chunk.js": "/furniture_store/static/js/2.432b9307.chunk.js",
+    "static/js/2.432b9307.chunk.js.map": "/furniture_store/static/js/2.432b9307.chunk.js.map",
+    "index.html": "/furniture_store/index.html",
+    "static/css/main.4a126a9a.chunk.css.map": "/furniture_store/static/css/main.4a126a9a.chunk.css.map",
+    "static/js/2.432b9307.chunk.js.LICENSE.txt": "/furniture_store/static/js/2.432b9307.chunk.js.LICENSE.txt",
+    "static/media/hero-bcg-2.78991864.jpeg": "/furniture_store/static/media/hero-bcg-2.78991864.jpeg",
+    "static/media/hero-bcg.a876f19f.jpeg": "/furniture_store/static/media/hero-bcg.a876f19f.jpeg",
+    "static/media/logo.df6634c4.svg": "/furniture_store/static/media/logo.df6634c4.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.93471463.js",
+    "static/js/2.432b9307.chunk.js",
+    "static/css/main.4a126a9a.chunk.css",
+    "static/js/main.f6ad2c2c.chunk.js"
+  ]
+}
