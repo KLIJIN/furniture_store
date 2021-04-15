@@ -61,13 +61,13 @@ const AddToCart = ({ product }) => {
     </div>
     <div className="btn-container">
       <AmountButtons amount={amount} increase={increase} decrease={decrease} counting={counting} />
-      <Link to='/cart' className="btn" onClick={() => addToCart(id, mainColor, amount, product)} >  add to Cart  </Link>
+      <Link to='/cart' className="btn" onClick={() => addToCart(id, mainColor, amount, product)} >  добавить в Корзину  </Link>
     </div>
   </Wrapper>
 }
 
 const Wrapper = styled.section`
-background-color: rgb(50 205 50 / 40%);
+// background-color: rgb(50 205 50 / 40%);
   margin-top: 2rem;
   .colors {
     display: grid;
@@ -109,7 +109,7 @@ background-color: rgb(50 205 50 / 40%);
 
   .btn {
     margin-top: 1rem;
-    width: 140px;
+    // width: 140px;
   }
 `
 export default AddToCart

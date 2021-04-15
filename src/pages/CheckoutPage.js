@@ -13,7 +13,7 @@ const CheckoutPage = () => {
     <PageHero title="checkout" />
 
     <Wrapper className="page"  >
-      <h1>checkout Page here</h1>
+      <h1>checkout Page </h1>
     </Wrapper>
 
   </main>

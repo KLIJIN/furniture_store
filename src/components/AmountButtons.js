@@ -8,7 +8,6 @@ const AmountButtons = ({ amount, increase, decrease, counting }) => {
     <button type="button" className="amount-btn" onClick={() => counting(-1)} >  <FaMinus />  </button>
     <h2 className="amount"> {amount} </h2>
     <button type="button" className="amount-btn" onClick={counting.bind(this, +1)} >  <FaPlus />  </button>
-
   </Wrapper>
 }
 

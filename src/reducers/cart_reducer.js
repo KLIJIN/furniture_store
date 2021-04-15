@@ -8,12 +8,12 @@ const cart_reducer = (state, action) => {
   // cart это корзина заказов.
   switch (action.type) {
     case ADD_TO_CART:
-      console.log("ADD_TO_CART reducer", action.payload)
+      // console.log("ADD_TO_CART reducer", action.payload)
       const { id, color, amount, product } = action.payload
       tempItem = state.cart.find((item) => item.id === id + color)
       //тут мы ищем в корзине item совпадающий с id + color из переданного пейлоада от filter_products 
       //Если в корзине такой товар есть, то хз, если нету, то добавляем в корзину заказов переданный пейлоад от filter_products 
-      console.log("ADD_TO_CART reducer", tempItem)
+      // console.log("ADD_TO_CART reducer", tempItem)
       if (tempItem) {
         const tempCarts = state.cart.map(cartItem => {
           if (cartItem.id === id + color) {

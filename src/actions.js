@@ -131,7 +131,6 @@ export const clearFiltersAction = () => {
 
 
 export const addToCartAction = (id, color, amount, product) => {
-  console.log("addToCartAction ", id, color, amount, product)
   return {
     type: ADD_TO_CART,
     payload: { id, color, amount, product }
@@ -140,7 +139,6 @@ export const addToCartAction = (id, color, amount, product) => {
 
 
 export const removeCartAction = (id) => {
-  console.log("removeCartAction");
   return {
     type: REMOVE_CART_ITEM,
     payload: id

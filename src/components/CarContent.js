@@ -9,7 +9,7 @@ import CartTotals from './CartTotals'
 const CartContent = () => {
   // компонент корзины товаров
   const { cart, clearCart } = useCartContext();
-  console.log("CartContext", cart);
+  // console.log("CartContext", cart);
   return <Wrapper className="section section-center" >
 
     <p>CartContent component</p>

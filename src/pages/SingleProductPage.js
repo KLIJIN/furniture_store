@@ -19,7 +19,7 @@ const SingleProductPage = () => {
 
   useEffect(() => {
     fetchSingleProduct(`${url}${id}`)
-  }, [id, fetchSingleProduct])
+  }, [id])
 
   useEffect(() => {
     //переадресация на главную страницу в случае ошибки через 5 секунд 
