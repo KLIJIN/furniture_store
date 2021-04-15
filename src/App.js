@@ -20,13 +20,13 @@ function App() {
       <Navbar />
       <Sidebar />
       <Switch>
-        <Route exact path="/">      <HomePage />      </Route>  {/*зарезервировали адрес / за компонентом Home*/}
-        <Route exact path="/about"> <AboutPage /> </Route>  {/*зарезервировали адрес  за компонентом AboutPage*/}
-        <Route exact path="/cart">  <CartPage />  </Route>  {/*зарезервировали адрес  за компонентом CartPage*/}
-        <Route exact path="/products"> <ProductsPage />  </Route>   {/*зарезервировали адрес  за компонентом ProductsPage*/}
-        <Route exact path="/products/:id" children={<SingleProductPage />} />   {/*зарезервировали адрес c айди продуктов за компонентом Home*/}
-        <Route exact path="/checkout"> <CheckoutPage /> </Route>  {/*зарезервировали адрес  за компонентом Home*/}
-        <Route path="*"> <ErrorPage /> </Route>   {/*перехват ошибок*/}
+        <Route exact path="/"> <HomePage />  </Route>
+        <Route exact path="/about"> <AboutPage /> </Route>
+        <Route exact path="/cart"> <CartPage /> </Route>
+        <Route exact path="/products"> <ProductsPage /> </Route>
+        <Route exact path="/products/:id" children={<SingleProductPage />} />
+        <Route exact path="/checkout"> <CheckoutPage /> </Route>
+        <Route path="*"> <ErrorPage /> </Route>
       </Switch>
       <Footer />
     </Router>
