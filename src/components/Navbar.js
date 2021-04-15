@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom'
 import { links } from '../utils/constants'
 import CartButtons from './NavButtons'
 import { useProductsContext } from '../context/products_context'
-import { useUserContext } from '../context/user_context'
+//import { useUserContext } from '../context/user_context'
 
 
 

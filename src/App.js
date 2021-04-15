@@ -2,7 +2,17 @@ import React from 'react'
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 import { Navbar, Sidebar, Footer } from './components'
 // import SingleProductPage from "./pages/SingleProductPage"
-import { AboutPage, AuthWrapper, CartPage, CheckoutPage, ErrorPage, HomePage, PrivateRoute, ProductsPage, SingleProductPage } from "./pages"
+import {
+  AboutPage,
+  //  AuthWrapper,
+  CartPage,
+  CheckoutPage,
+  ErrorPage,
+  HomePage,
+  // PrivateRoute,
+  ProductsPage,
+  SingleProductPage
+} from "./pages"
 
 function App() {
   return (

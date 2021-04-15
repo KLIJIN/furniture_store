@@ -1,13 +1,8 @@
 import React, { useContext, useReducer, createContext, useEffect } from 'react'
 import CartReducer from '../reducers/cart_reducer'
-import { ADD_TO_CART, addToCartAction } from '../actions'
-import {
-  REMOVE_CART_ITEM, removeCartAction,
-  TOGGLE_CART_ITEM_AMOUNT, toggleCartItemAmountAct,
-  CLEAR_CART, clearCartAction,
-  COUNT_CART_TOTALS, countCartTotalsActon,
-} from '../actions'
-import { GiOverlordHelm } from 'react-icons/gi';
+import { addToCartAction } from '../actions'
+import { removeCartAction, toggleCartItemAmountAct, clearCartAction, countCartTotalsActon, } from '../actions'
+//import { GiOverlordHelm } from 'react-icons/gi';
 
 
 

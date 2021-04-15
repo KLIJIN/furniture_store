@@ -8,7 +8,6 @@ import { CartContent, PageHero } from '../components'
 const CartPage = () => {
 
   const { cart } = useCartContext();
-  console.log("state", cart);
 
   if (cart.length < 1) {
     return <Wrapper className="page-100" >
@@ -19,7 +18,6 @@ const CartPage = () => {
     </Wrapper>
   }
 
-
   return <main>
     <PageHero title="cart" />
     <Wrapper className="page" >
@@ -27,7 +25,6 @@ const CartPage = () => {
       <CartContent />
     </Wrapper>
   </main >
-
 }
 
 const Wrapper = styled.main`

@@ -14,17 +14,12 @@ const SingleProductPage = () => {
   const { id } = useParams();
   const history = useHistory()
 
-  const {
-    single_product_loading: loading,
-    single_product_error: error,
-    single_product: product,
-    fetchSingleProduct,
-  } = useProductsContext() //достаем из контекста часть initialState
+  const { single_product_loading: loading, single_product_error: error, single_product: product, fetchSingleProduct, } = useProductsContext() //достаем из контекста часть initialState
 
 
   useEffect(() => {
     fetchSingleProduct(`${url}${id}`)
-  }, [id])
+  }, [id, fetchSingleProduct])
 
   useEffect(() => {
     //переадресация на главную страницу в случае ошибки через 5 секунд 
