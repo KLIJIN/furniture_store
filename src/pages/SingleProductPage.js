@@ -10,12 +10,14 @@ import { Loading, Error, ProductImages, AddToCart, Stars, PageHero, } from '../c
 
 
 const SingleProductPage = () => {
+  console.log("SingleProductPage render");
 
   const { id } = useParams();
   const history = useHistory()
 
   const { single_product_loading: loading, single_product_error: error, single_product: product, fetchSingleProduct, } = useProductsContext() //достаем из контекста часть initialState
 
+  const { name, price, description, stock, stars, reviews, id: sku, company, images, } = product
 
   useEffect(() => {
     fetchSingleProduct(`${url}${id}`)
@@ -31,13 +33,24 @@ const SingleProductPage = () => {
     // eslint-disable-next-line
   }, [error])
 
-  const { name, price, description, stock, stars, reviews, id: sku, company, images, } = product
+
+  useEffect(() => {
+    document.title = `Furniture Store ${name ? "- " + name : ""}`;
+    return () => (
+      document.title = `Furniture Store`
+    )
+  }, [name])
+
+
   return <Wrapper>
-    {loading && <Loading />}
+
+    {/* {loading && <Loading />} */}
     {error && <Error />}
+
     < PageHero title={name} product={product} />
     <div className="section section-center page">
       <Link to="/products" className="btn" > Обратно в Каталог  </Link>
+
       <div className="product-center">
         {images?.length > 1 && <ProductImages images={images} sku={sku} id={id} />}
         <section className="content">

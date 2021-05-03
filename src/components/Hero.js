@@ -5,6 +5,7 @@ import heroBcg from '../assets/hero-bcg.jpeg'
 import heroBcg2 from '../assets/hero-bcg-2.jpeg'
 
 const Hero = () => {
+  console.log("Hero render");
   return <Wrapper>
     <article className="content">
       <h1>design your <br /> comfort zone </h1>

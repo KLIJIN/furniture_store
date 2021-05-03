@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom'
 
 
 const PageHero = ({ title, product }) => {
+  console.log("PageHero render");
   return <Wrapper>
     <div className="section-center">
       <h3>

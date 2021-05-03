@@ -4,7 +4,7 @@ import { PageHero } from '../components'
 import aboutImg from '../assets/hero-bcg.jpeg'
 
 const AboutPage = () => {
-
+  console.log("AboutPage  render");
   return (
     <main>
       <PageHero title="about" />

@@ -7,6 +7,7 @@ export const GET_PRODUCTS_ERROR = 'GET_PRODUCTS_ERROR'
 
 export const GET_SINGLE_PRODUCT_BEGIN = 'GET_SINGLE_PRODUCT_BEGIN'
 export const GET_SINGLE_PRODUCT_SUCCESS = 'GET_SINGLE_PRODUCT_SUCCESS'
+export const GET_SINGLE_PRODUCT_ANMOUNT = 'GET_SINGLE_PRODUCT_ANMOUNT'
 export const GET_SINGLE_PRODUCT_ERROR = 'GET_SINGLE_PRODUCT_ERROR'
 
 export const LOAD_PRODUCTS = 'LOAD_PRODUCTS'
@@ -76,6 +77,14 @@ export const GetSingleProductsSuccessAct = (singleProduct) => {
     payload: singleProduct
   }
 }
+
+export const GetSingleProductsAnmountAct = () => {
+  return {
+    type: GET_SINGLE_PRODUCT_ANMOUNT,
+  }
+}
+
+
 
 export const GetSingleProductsErrorAct = () => {
   return (

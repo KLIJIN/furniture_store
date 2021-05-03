@@ -4,6 +4,7 @@ import { formatPrice } from '../utils/helpers'
 import { Link } from 'react-router-dom'
 
 const ListView = ({ products }) => {
+  console.log("ListView render");
   return <Wrapper>
     {products.map((product) => {
       const { id, image, name, price, description } = product;

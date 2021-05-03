@@ -3,7 +3,7 @@ import { useFilterContext } from '../context/filter_context'
 import { BsFillGridFill, BsList } from 'react-icons/bs'
 import styled from 'styled-components'
 const Sort = () => {
-
+  console.log("Sort render");
   const { filtered_products: products, grid_view, setGridView, setListView, sort, updateSort } = useFilterContext();
 
   return <Wrapper>

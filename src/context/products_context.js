@@ -4,7 +4,7 @@ import ProductsReducer from '../reducers/products_reducer'
 import { products_url as url } from '../utils/constants'
 import {
   sidebarOpenAction, sidebarCloseAction, GetProductsBeginAction, GetProductsSuccessAction,
-  GetProductsErrorAction, GetSingleProductsBeginAct, GetSingleProductsSuccessAct, GetSingleProductsErrorAct
+  GetProductsErrorAction, GetSingleProductsBeginAct, GetSingleProductsSuccessAct, GetSingleProductsErrorAct, GetSingleProductsAnmountAct
 } from '../actions'
 
 
@@ -22,7 +22,7 @@ const initialState = {
 const ProductsContext = React.createContext();
 
 export const ProductsProvider = ({ children }) => {
-
+  console.log("ProductsProvider ")
   const [state, dispatch] = useReducer(ProductsReducer, initialState)
 
   const openSidebar = () => {
@@ -58,13 +58,16 @@ export const ProductsProvider = ({ children }) => {
       dispatch(GetSingleProductsErrorAct())
     }
   }
+  const SingleProductsAnmount = () => {
+    dispatch(GetSingleProductsAnmountAct())
+  }
 
   useEffect(() => {
     fetchProducts(url);
   }, [])
 
   return (
-    <ProductsContext.Provider value={{ ...state, openSidebar, closeSidebar, fetchSingleProduct }}>
+    <ProductsContext.Provider value={{ ...state, openSidebar, closeSidebar, fetchSingleProduct, SingleProductsAnmount }}>
       {children}
     </ProductsContext.Provider>
   )

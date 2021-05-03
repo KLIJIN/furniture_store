@@ -10,6 +10,9 @@ import { useProductsContext } from '../context/products_context'
 //import { useUserContext } from '../context/user_context'
 
 const CartButtons = () => {
+
+  console.log("CartButtons render");
+
   const { closeSidebar } = useProductsContext();
   const { total_items } = useCartContext();
 

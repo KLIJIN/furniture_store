@@ -27,7 +27,7 @@ const initialState = {
 const CartContext = createContext()
 
 export const CartProvider = ({ children }) => {
-
+  console.log("CartProvider ")
   const [state, dispatch] = useReducer(CartReducer, initialState);
 
   const addToCart = (id, color, amount, product) => {

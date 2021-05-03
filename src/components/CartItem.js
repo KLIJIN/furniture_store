@@ -8,7 +8,7 @@ import { useCartContext } from '../context/cart_context'
 
 
 const CartItem = ({ id, image, name, color, price, amount }) => {
-
+  console.log("CartItem render");
   const { removeItem, toggleAmount } = useCartContext();
 
   const increase = () => { }

@@ -1,14 +1,23 @@
 import React, { useState, useEffect } from 'react'
 import styled from 'styled-components'
+import { useProductsContext } from '../context/products_context'
 
 const ProductImages = ({ images = [{ url: '' }] }) => {
+  console.log("ProductImages render");
   // console.log("ProductImages", images);
-
+  const { SingleProductsAnmount } = useProductsContext() //достаем из контекста часть initialState
   const [main, setMain] = useState(images[0])
 
   useEffect(() => {
     setMain(images[0])
   }, [images])
+
+  useEffect(() => {
+    return () => {
+      console.log("ProductImages anmount");
+      SingleProductsAnmount();
+    }
+  }, [SingleProductsAnmount])
 
   const clickHandler = (index) => {
     // console.log("clickHandler", images[index])

@@ -7,6 +7,7 @@ import CartItem from './CartItem'
 import CartTotals from './CartTotals'
 
 const CartContent = () => {
+  console.log("CartContent render");
   // компонент корзины товаров
   const { cart, clearCart } = useCartContext();
   // console.log("CartContext", cart);

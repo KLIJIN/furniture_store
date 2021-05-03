@@ -11,7 +11,7 @@ import { useProductsContext } from '../context/products_context'
 
 
 const Nav = () => {
-
+  console.log("Nav render");
   const { openSidebar } = useProductsContext();
 
   return <NavContainer>

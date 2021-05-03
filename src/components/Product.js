@@ -5,7 +5,7 @@ import { FaSearch } from 'react-icons/fa'
 import { Link } from 'react-router-dom'
 
 const Product = ({ id, name, price, image }) => {
-
+  console.log("Product render");
   return <Wrapper>
     <div className='container'>
       <img src={image} alt={name} />

@@ -9,6 +9,7 @@ import CartButtons from './NavButtons'
 // import { useUserContext } from '../context/user_context'
 
 const Sidebar = () => {
+  console.log("Sidebar render");
   const { isSidebarOpen, closeSidebar } = useProductsContext();
 
 

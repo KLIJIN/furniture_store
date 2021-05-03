@@ -9,6 +9,7 @@ import {
 // import { Link } from 'react-router-dom'
 
 const CheckoutPage = () => {
+  console.log("CheckoutPage page render");
   return <main>
     <PageHero title="checkout" />
 

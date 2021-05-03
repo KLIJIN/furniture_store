@@ -6,7 +6,7 @@ import { CartContent, PageHero } from '../components'
 // import { CartContent, PageHero } from '../components'
 
 const CartPage = () => {
-
+  console.log("CartPage page render");
   const { cart } = useCartContext();
 
   if (cart.length < 1) {

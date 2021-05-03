@@ -3,6 +3,7 @@ import styled from 'styled-components'
 import Product from './Product'
 
 const GridView = ({ products }) => {
+  console.log("GridView render");
   return <Wrapper>
     <div className='products-container'>
       {products.map((product) => {

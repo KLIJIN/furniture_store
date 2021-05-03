@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 
 const ErrorPage = () => {
+  console.log("ErrorPage render");
   return <Wrapper className="page-100" >
     <section>
       <h1>404</h1>

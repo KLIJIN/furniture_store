@@ -3,6 +3,7 @@ import styled from 'styled-components'
 import { services } from '../utils/constants'
 
 const Services = () => {
+  console.log("Services  render");
   return <Wrapper>
     <div className="section-center">
       <article className="header">

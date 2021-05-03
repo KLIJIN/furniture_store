@@ -2,6 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 
 const Contact = () => {
+  console.log("Contact render");
   return <Wrapper>
     <div className="section-center">
       <h3>Подпишитесь на нашу рассылку и экономьте до 20%  </h3>

@@ -6,7 +6,7 @@ import { useCartContext } from '../context/cart_context'
 import AmountButtons from './AmountButtons'
 /* область с цветами, количеством и кнопкой добавить в корзину */
 const AddToCart = ({ product }) => {
-
+  console.log("AddToCart render");
   const { addToCart } = useCartContext(); //достаем функцию const addToCart = (id, color, amount, product) => {     dispatch({ type: ADD_TO_CART, payload: { id, color, amount, product } })  }
   const { id, stock, colors } = product;
 
